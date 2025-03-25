@@ -15,7 +15,7 @@
 - [Usage](#usage)
   - [Example: Update specific packages to latest](#example-update-specific-packages-to-latest)
   - [Example: Update all packages to latest](#example-update-all-packages-to-latest)
-- [Related utils](#related-utils)
+- [Related tools](#related-tools)
 - [License](#license)
 
 ## Intro
@@ -135,7 +135,9 @@ index 4619573..6ce2aaa 100644
    wikibase-sdk: ^10.2.2
 ```
 
-## Related utils
+## Related tools
+
+It looks like [taze](https://github.com/antfu-collective/taze) supports pnpm workspaces, which is likely a much more robust tool than this one.
 
 `pnpm outdated -r` is useful to see all the dependencies in your workspace that are out-of-date.
 
