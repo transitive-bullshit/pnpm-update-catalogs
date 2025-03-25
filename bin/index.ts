@@ -11,12 +11,14 @@ import { cli } from 'cleye'
 import { gracefulExit } from 'exit-hook'
 import { oraPromise } from 'ora'
 import pMap from 'p-map'
+import plur from 'plur'
 import YAML from 'yaml'
 
 async function main() {
   const args = cli(
     {
       name: 'pnpm-update-catalogs',
+      parameters: ['[pkg...]'],
       flags: {
         latest: {
           type: Boolean,
@@ -41,6 +43,9 @@ async function main() {
     () => {},
     process.argv
   )
+
+  const packagesToProcess =
+    args._.length > 2 ? new Set(args._.slice(2)) : undefined
 
   const catalogsToProcess = args.flags.catalogs?.length
     ? new Set(args.flags.catalogs)
@@ -73,6 +78,8 @@ async function main() {
     return
   }
 
+  const packagesProcessed = new Set<string>()
+
   const allCatalogEntries = Object.entries(catalogs)
     .flatMap(([catalogName, catalog]) => {
       if (catalogsToProcess && !catalogsToProcess.has(catalogName)) {
@@ -83,17 +90,34 @@ async function main() {
         return []
       }
 
-      return Object.entries(catalog).map(([packageName, pref]) => {
-        assert(pref)
+      return Object.entries(catalog)
+        .map(([packageName, pref]) => {
+          assert(pref)
 
-        return {
-          catalogName,
-          packageName,
-          pref
-        }
-      })
+          if (packagesToProcess && !packagesToProcess.has(packageName)) {
+            return undefined
+          }
+
+          packagesProcessed.add(packageName)
+
+          return {
+            catalogName,
+            packageName,
+            pref
+          }
+        })
+        .filter(Boolean)
     })
     .filter((catalogEntry) => catalogEntry.pref !== 'latest')
+
+  if (packagesToProcess && packagesProcessed.size !== packagesToProcess.size) {
+    const missingPackages = Array.from(packagesToProcess).filter(
+      (pkg) => !packagesProcessed.has(pkg)
+    )
+    console.error('Error: missing catalog packages:', missingPackages)
+    gracefulExit(1)
+    return
+  }
 
   const catalogEntryResolutions = await oraPromise(
     pMap(
@@ -128,7 +152,7 @@ async function main() {
         concurrency: 16
       }
     ),
-    `Resolving ${allCatalogEntries.length} catalog entries...`
+    `Resolving ${allCatalogEntries.length} catalog ${plur('package', allCatalogEntries.length)}...`
   )
 
   if (args.flags.verbose) {

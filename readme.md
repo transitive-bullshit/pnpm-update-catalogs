@@ -13,7 +13,8 @@
 - [Features](#features)
 - [Install](#install)
 - [Usage](#usage)
-  - [Example usage](#example-usage)
+  - [Example: Update 2 packages](#example-update-2-packages)
+  - [Example: Update all packages to latest](#example-update-all-packages-to-latest)
 - [License](#license)
 
 ## Intro
@@ -25,9 +26,9 @@ Namely, it allows you to run a command at the top of your `pnpm` workspaces mono
 ## Features
 
 - Uses internal `pnpm` packages so config and dependency resolution are as close to the official `pnpm` version as possible
-- Optionally target specific catalogs (by default all catalogs will be updated)
 - Formatting and yaml comments are preserved
 - By default, follows current version ranges but supports the `--latest` (`-L`) option as well
+- Optionally target specific catalogs or specific packages (by default all catalogs and packages will be updated)
 
 ## Install
 
@@ -47,7 +48,7 @@ npx pnpm-update-catalogs --help
 pnpm-update-catalogs
 
 Usage:
-  pnpm-update-catalogs [flags...]
+  pnpm-update-catalogs [flags...] [pkg...]
 
 Flags:
   -c, --catalogs <string>        Update specific catalogs (by default, all catalogs will be updated)
@@ -56,10 +57,20 @@ Flags:
   -V, --verbose                  Verbose output
 ```
 
+You can optionally pass an array of catalog packages to update.
+
 > [!NOTE]
 > Make sure you run `pnpm install` after updating your workspace file for the updated catalog packages to actually be installed.
 
-### Example usage
+### Example: Update 2 packages
+
+```sh
+npx pnpm-update-catalogs -L typescript tsx
+pnpm install
+git diff
+```
+
+### Example: Update all packages to latest
 
 ```sh
 npx pnpm-update-catalogs -L
