@@ -30,8 +30,9 @@
     "test:typecheck": "tsc --noEmit",
     "release": "bumpp && pnpm publish",
     "prebuild": "run-s clean",
-    "pretest": "run-s build",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "prerelease": "run-s build",
+    "pretest": "run-s build"
   },
   "dependencies": {
     "@pnpm/cli-meta": "^1000.0.4",
