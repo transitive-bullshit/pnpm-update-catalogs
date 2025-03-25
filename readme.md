@@ -13,7 +13,7 @@
 - [Features](#features)
 - [Install](#install)
 - [Usage](#usage)
-  - [Example: Update 2 packages](#example-update-2-packages)
+  - [Example: Update specific packages to latest](#example-update-specific-packages-to-latest)
   - [Example: Update all packages to latest](#example-update-all-packages-to-latest)
 - [License](#license)
 
@@ -62,7 +62,7 @@ You can optionally pass an array of catalog packages to update.
 > [!NOTE]
 > Make sure you run `pnpm install` after updating your workspace file for the updated catalog packages to actually be installed.
 
-### Example: Update 2 packages
+### Example: Update specific packages to latest
 
 ```sh
 npx pnpm-update-catalogs -L typescript tsx
