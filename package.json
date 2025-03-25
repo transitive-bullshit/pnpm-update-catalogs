@@ -28,7 +28,7 @@
     "test:format": "prettier --check \"**/*.{js,ts,tsx}\"",
     "test:lint": "eslint .",
     "test:typecheck": "tsc --noEmit",
-    "release": "bumpp -r && pnpm publish -r",
+    "release": "bumpp && pnpm publish",
     "prebuild": "run-s clean",
     "pretest": "run-s build",
     "preinstall": "npx only-allow pnpm"
