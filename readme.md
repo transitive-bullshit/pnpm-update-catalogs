@@ -137,9 +137,9 @@ index 4619573..6ce2aaa 100644
 
 ## Related utils
 
-`pnpm outdated -r` is useful to see all of the dependencies in your workspace that are out-of-date.
+`pnpm outdated -r` is useful to see all the dependencies in your workspace that are out-of-date.
 
-`npx codemod pnpm/catalog` is very helpful for converting project dependencies to use the changelog in the first place.
+`npx codemod pnpm/catalog` is great for converting your workspace's normal dependencies to use the catalog instead.
 
 ## License
 
