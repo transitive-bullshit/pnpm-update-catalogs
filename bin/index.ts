@@ -149,7 +149,9 @@ async function main() {
     const { catalogName, packageName, pref, resolution } =
       catalogEntryResolution
 
-    const resolvedVersion = resolution?.manifest?.version
+    const resolvedVersion = args.flags.latest
+      ? resolution.latest
+      : resolution?.manifest?.version
     if (!resolvedVersion) {
       // No version found
       continue
