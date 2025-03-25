@@ -1,6 +1,6 @@
 # pnpm-update-catalogs <!-- omit from toc -->
 
-> pnpm update for `pnpm-workspace.yaml` catalogs.
+> pnpm update for `pnpm-workspace.yaml` [catalogs](https://pnpm.io/catalogs).
 
 <p>
   <a href="https://github.com/transitive-bullshit/pnpm-update-catalogs/actions/workflows/main.yml"><img alt="Build Status" src="https://github.com/transitive-bullshit/pnpm-update-catalogs/actions/workflows/main.yml/badge.svg" /></a>
@@ -22,7 +22,7 @@
 
 This CLI provides a temporary fix for: https://github.com/pnpm/pnpm/issues/8641
 
-Namely, it allows you to run a command at the top of your `pnpm` workspaces monorepo which updates all of the catalog dependencies.
+Namely, it allows you to run a command at the top of your `pnpm` workspaces monorepo which updates all of the [catalog](https://pnpm.io/catalogs) dependencies.
 
 ## Features
 
