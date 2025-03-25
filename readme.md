@@ -24,7 +24,7 @@ Namely, it allows you to run a command at the top of your `pnpm` workspaces mono
 
 ## Features
 
-- Uses internal `pnpm` packages so config and dependency resolution is as close to the official `pnpm` version as possible
+- Uses internal `pnpm` packages so config and dependency resolution are as close to the official `pnpm` version as possible
 - Optionally target specific catalogs (by default all catalogs will be updated)
 - Formatting and yaml comments are preserved
 - By default, follows current version ranges but supports the `--latest` (`-L`) option as well
