@@ -1,6 +1,6 @@
 {
   "name": "pnpm-update-catalogs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "pnpm update for pnpm workspace catalogs.",
   "author": "Travis Fischer <travis@transitivebullsh.it>",
   "license": "MIT",
