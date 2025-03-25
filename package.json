@@ -24,12 +24,13 @@
   "scripts": {
     "build": "tsup",
     "clean": "del clean",
-    "prebuild": "run-s clean",
-    "pretest": "run-s build",
     "test": "run-s test:*",
     "test:format": "prettier --check \"**/*.{js,ts,tsx}\"",
     "test:lint": "eslint .",
     "test:typecheck": "tsc --noEmit",
+    "release": "bumpp -r && pnpm publish -r",
+    "prebuild": "run-s clean",
+    "pretest": "run-s build",
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
@@ -46,6 +47,7 @@
   "devDependencies": {
     "@fisch0920/eslint-config": "^1.4.0",
     "@types/node": "^22.13.13",
+    "bumpp": "^10.1.0",
     "del-cli": "^6.0.0",
     "dotenv": "^16.4.7",
     "eslint": "^8.57.1",
