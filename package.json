@@ -1,7 +1,7 @@
 {
   "name": "pnpm-update-catalogs",
   "version": "0.1.0",
-  "description": "Update catalogs in pnpm-workspace.yaml",
+  "description": "pnpm update for pnpm workspace catalogs dependencies.",
   "author": "Travis Fischer <travis@transitivebullsh.it>",
   "license": "MIT",
   "repository": {
