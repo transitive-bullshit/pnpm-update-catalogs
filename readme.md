@@ -15,6 +15,7 @@
 - [Usage](#usage)
   - [Example: Update specific packages to latest](#example-update-specific-packages-to-latest)
   - [Example: Update all packages to latest](#example-update-all-packages-to-latest)
+- [Related utils](#related-utils)
 - [License](#license)
 
 ## Intro
@@ -133,6 +134,12 @@ index 4619573..6ce2aaa 100644
    vitest: ^3.0.9
    wikibase-sdk: ^10.2.2
 ```
+
+## Related utils
+
+`pnpm outdated -r` is useful to see all of the dependencies in your workspace that are out-of-date.
+
+`npx codemod pnpm/catalog` is very helpful for converting project dependencies to use the changelog in the first place.
 
 ## License
 
