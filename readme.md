@@ -92,8 +92,8 @@ index 4619573..6ce2aaa 100644
    '@types/jsrsasign': ^10.5.15
    '@types/node': ^22.13.13
    '@xsai/tool': ^0.1.3
--  ai: ^4.1.61
-+  ai: ^4.2.2
+-  ai: ^4.1.61 # this comment will be retained
++  ai: ^4.2.2 # this comment will be retained
    bumpp: ^10.1.0
    camelcase: ^8.0.0
    cleye: ^1.3.4
