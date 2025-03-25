@@ -79,10 +79,10 @@ index 4619573..6ce2aaa 100644
 +  genkit: ^1.3.0
 +  genkitx-openai: ^0.20.2
    json-schema-to-zod: ^2.6.0
--  jsonrepair: ^3.9.0
-+  jsonrepair: ^3.12.0
+-  jsonrepair: ^3.9.0 # this comment will be preserved
++  jsonrepair: ^3.12.0 # this comment will be preserved
    jsrsasign: ^10.9.0
-   ky: ^1.7.5
+   ky: ^1.7.5 # this comment will also be preserved
 -  langchain: ^0.3.3
 +  langchain: ^0.3.19
    lint-staged: ^15.5.0
