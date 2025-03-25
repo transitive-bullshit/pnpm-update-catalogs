@@ -56,10 +56,14 @@ Flags:
   -V, --verbose                  Verbose output
 ```
 
+> [!NOTE]
+> Make sure you run `pnpm install` after updating your workspace file for the updated catalog packages to actually be installed.
+
 ### Example usage
 
 ```sh
 npx pnpm-update-catalogs -L
+pnpm install
 git diff
 ```
 
